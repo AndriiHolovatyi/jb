@@ -30,4 +30,12 @@ bin/
 
 /out/**
 /.idea/**
-/src/app/Lesson1/**
+/src/Lesson1/**
+/src/Lesson2/**
+/src/Lesson4/BonusHWLesson4.java
+/src/Lesson4/BonusHW2Lesson4.java
+/src/Lesson5/BonusHW1Lesson5.java
+/src/Lesson5/BonusHW2Lesson5.java
+/src/Lesson5/BonusHW3Lesson5.java
+/src/Lesson5/BonusHW4Lesson5.java
+
