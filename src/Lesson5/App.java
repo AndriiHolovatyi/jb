@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class App {
 
-    static void main() {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Введіть суму доходу у форматі 00.00");
         float profitSum = sc.nextFloat();

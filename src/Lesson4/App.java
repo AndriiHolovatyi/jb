@@ -3,7 +3,7 @@ package Lesson4;
 public class App {
 
 
-    public static void main() {
+    public static void main(String[] args) {
 
         int salesDaysSmarphone = 5;
         float totalSalesSmartphone = 12153.41f;
