@@ -6,7 +6,7 @@ public class BMICalc {
 
     static void main() {
 
-        Scanner scanner = new Scanner(System.in);
+        var scanner = new Scanner(System.in);
 
         System.out.println("""
                 Enter 1 if you prefer assessment using basic BMI categories.
@@ -15,18 +15,20 @@ public class BMICalc {
                 Enter 4 if you prefer assessment using Singapore BMI categories.
                 """);
 
-        int basicChoice = scanner.nextInt();
+        var basicChoice = scanner.nextInt();
 
         System.out.println("Enter your weight in kg, please use format 00.00");
 
-        float weightInput = scanner.nextFloat();
+        var weightInput = scanner.nextFloat();
 
         System.out.println("Enter your height in meters, please use format 00.00");
 
-        float heightInput = scanner.nextFloat();
+        var heightInput = scanner.nextFloat();
 
-        double sqHeight = Math.pow(heightInput, 2);
-        double BMI = weightInput / sqHeight;
+        var sqHeight = Math.pow(heightInput, 2);
+        var BMI = weightInput / sqHeight;
+
+// багато зайвого коду // багато зайвого коду // багато зайвого коду // багато зайвого коду // багато зайвого коду
 
 //common categories, obese1-3 also for Japan
         String underweightSevere = "underweight (you are suffering from severe thinness). Please, apply for medical expertise at your local hospital";
@@ -57,6 +59,7 @@ public class BMICalc {
         String finalResult = "Your BMI is %.1f. You are %s.";
 
 //common categories final result printed
+
         if (basicChoice == 1 & BMI < 16) {
             System.out.printf(finalResult, BMI, underweightSevere);
         } else if (basicChoice == 1 & BMI >= 16 & BMI < 17) {
@@ -74,6 +77,7 @@ public class BMICalc {
         } else if (basicChoice == 1 & BMI >= 40) {
             System.out.printf(finalResult, BMI, obese3);
         }
+
 //Hong Kong categories final result printed
         if (basicChoice == 2 & BMI < 18.5) {
             System.out.printf(finalResult, BMI, underweightUnhealthyHKWC);
@@ -110,6 +114,77 @@ public class BMICalc {
         } else if (basicChoice == 4 & BMI >= 27.5) {
             System.out.printf(finalResult, BMI, veryOverweightToObeseSWC);
         }
+
+
+
+// зменшуємо кількість коду // зменшуємо кількість коду // зменшуємо кількість коду // зменшуємо кількість коду
+
+        //common categories final result printed
+
+        String weightCategory;
+        if (basicChoice == 1 & BMI < 16) {
+            weightCategory = underweightSevere;
+        } else if (basicChoice == 1 & BMI < 17) {
+            weightCategory = underweightModerate;
+        } else if (basicChoice == 1 & BMI < 18.5) {
+            weightCategory = underweightMild;
+        } else if (basicChoice == 1 & BMI < 25) {
+            weightCategory = normalCommonWC;
+        } else if (basicChoice == 1 & BMI < 30) {
+            weightCategory = overweightCommonWC;
+        } else if (basicChoice == 1 & BMI < 35) {
+            weightCategory = obese1;
+        } else if (basicChoice == 1 & BMI < 40) {
+            weightCategory = obese2;
+        } else {
+            weightCategory = obese3;
+        }
+        System.out.printf(finalResult, BMI, weightCategory);
+
+
+//Hong Kong categories final result printed
+        if (basicChoice == 2 & BMI < 18.5) {
+            weightCategory = underweightUnhealthyHKWC;
+        } else if (basicChoice == 2 & BMI <= 22.9) {
+            weightCategory = normalHealthyHKWC;
+        } else if (basicChoice == 2 & BMI <= 24.9) {
+            weightCategory = overweight1HKWC;
+        } else if (basicChoice == 2 & BMI <= 29.9) {
+            weightCategory = overweight2HKWC;
+        } else {
+            weightCategory = overweight3HKWC;
+        }
+        System.out.printf(finalResult, BMI, weightCategory);
+
+//Japan categories final result printed
+        if (basicChoice == 3 & BMI < 18.5) {
+            weightCategory = underweightThinJWC;
+        } else if (basicChoice == 3 & BMI <= 24.9) {
+            weightCategory = normalJWC;
+        } else if (basicChoice == 3 & BMI <= 29.9) {
+            weightCategory = obese1;
+        } else if (basicChoice == 3 & BMI <= 34.9) {
+            weightCategory = obese2;
+        } else if (basicChoice == 3 & BMI <= 39.9) {
+            weightCategory = obese3;
+        } else {
+            weightCategory = obese4;
+        }
+        System.out.printf(finalResult, BMI, weightCategory);
+
+//Singapore categories final result printed
+        if (basicChoice == 4 & BMI < 18.5) {
+            weightCategory = underweightSWC;
+        } else if (basicChoice == 4 & BMI <= 22.9) {
+            weightCategory = normalSWC;
+        } else if (basicChoice == 4 & BMI <= 27.4) {
+            weightCategory = mildToModerateOverweightSWC;
+        } else {
+            weightCategory = veryOverweightToObeseSWC;
+        }
+        System.out.printf(finalResult, BMI, weightCategory);
+
+
     }
 }
 
