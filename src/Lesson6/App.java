@@ -4,7 +4,6 @@ public class App {
 
     static void main(String[] args) {
 
-        var a = 0;
         var sumOfNum = 0;
         for (int i = 1; i <= 6; i++) {
             sumOfNum += i;
