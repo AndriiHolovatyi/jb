@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class BMICalc {
 
-    static void main() {
+    static void main(String[] args) {
 
         var scanner = new Scanner(System.in);
 
